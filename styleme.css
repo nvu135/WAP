@@ -33,3 +33,15 @@
 .background-color img {
     width: 100%;
 }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p::first-letter {
+    font-size: 1.5em;
+}
