@@ -99,11 +99,11 @@
                 <div class="row">
                     <div class="text-input small-12 medium-6 columns required"><span>
                             <span><label for="contact-email"><span>Email Address</span><span class="show-for-sr"><span>Required</span></span></label>
-                                <div class="validation-wrapper"><input id="contact-email" maxlength="40" type="text" required minlength="2" pattern="^((1[012])|(0?[1-9]))\/((0[1-9])|([12][0-9])|(3[01]))\/\d\d\d\d$"></div>
+                                <div class="validation-wrapper"><input id="contact-email" maxlength="40" type="text" required minlength="2" pattern="^\S+@\S+\.\S+$"></div>
                             </span>
                         </span></div>
                     <div class="text-input small-12 medium-6 columns required"><span><span><label for="contact-phone"><span>Primary Phone Number</span><span class="show-for-sr"><span>Required</span></span></label>
-                                <div class="validation-wrapper"><input autocomplete="off" autocorrect="off" id="contact-phone" aria-required="true" class="" type="tel" value="(___) ___-____"></div>
+                                <div class="validation-wrapper"><input id="contact-phone" required pattern="^\([0-9]{3}\)\s([0-9]{3})\-([0-9]{4})$" type="tel" value="(000) 000-0000"></div>
                             </span></span></div>
                 </div>
             </div>
@@ -152,13 +152,13 @@
                 <div class="row">
                     <div class="currency-input small-12 medium-6 columns required"><span><span><label for="financial-annual-income"><span>Your Annual Income (Before Taxes)</span><span class="show-for-sr"><span>Required</span></span></label>
                                 <div class="validation-wrapper">
-                                    <div class="currency"><span class="currency-sign">$</span><input autocomplete="off" autocorrect="off" pattern="[0-9]*" id="financial-annual-income" maxlength="7" aria-required="true" class="" type="tel" value=""></div>
+                                    <div class="currency"><span class="currency-sign">$</span><input pattern="[0-9]*" id="financial-annual-income" maxlength="7" required type="tel" value=""></div>
                                 </div>
                             </span></span></div>
                     <div class="currency-input small-12 medium-6 columns required"><span>
                             <span><label for="financial-other-income"><span>Other Household Income (Before Taxes)</span><span class="show-for-sr"><span>Required</span></span></label>
                                 <div class="validation-wrapper">
-                                    <div class="currency"><span class="currency-sign">$</span><input autocomplete="off" autocorrect="off" pattern="[0-9]*" id="financial-other-income" maxlength="7" aria-required="true" class="" type="tel" value=""></div>
+                                    <div class="currency"><span class="currency-sign">$</span><input pattern="[0-9]*" id="financial-other-income" maxlength="7" required type="tel" value=""></div>
                                 </div>
                             </span>
                         </span></div>
@@ -173,7 +173,7 @@
                         </span></div>
                     <div class="currency-input small-12 medium-6 columns"><span><span><label for="financial-monthly-rent"><span>Monthly Rent/Mortgage </span><span class="sub-label"><span>(Optional)</span></span></label>
                                 <div class="validation-wrapper">
-                                    <div class="currency"><span class="currency-sign">$</span><input autocomplete="off" autocorrect="off" pattern="[0-9]*" id="financial-monthly-rent" maxlength="7" aria-required="false" class="" type="tel" value=""></div>
+                                    <div class="currency"><span class="currency-sign">$</span><input  pattern="[0-9]*" id="financial-monthly-rent" maxlength="7" required type="tel"></div>
                                 </div>
                             </span></span></div>
                 </div>
