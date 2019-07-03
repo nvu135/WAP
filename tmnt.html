@@ -6,9 +6,25 @@
     <meta charset="utf-8" />
     <link href="movie.css" type="text/css" rel="stylesheet" />
     <link rel="icon" type="image/png" href=" rotten.gif" />
+    <script>
+        window.onload = function() {
+            var popUp = document.getElementById("pop-up");
+            popUp.style.display = "block";
+
+            var popUpButton = document.getElementById("button-hide");
+            popUpButton.onclick = function() {
+                popUp.style.display = "none";
+            };
+        };
+    </script>
 </head>
 
 <body>
+    <div id="pop-up">
+        <button id="button-hide">
+            Hide pop-up
+        </button>
+    </div>
     <div id="banner-img-container">
         <img id="banner-img" src="banner.png" alt="Rancid Tomatoes" />
     </div>

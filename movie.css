@@ -116,3 +116,30 @@ dt {
     right: 0;
     opacity: 0.5;
 }
+
+#pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 50%;
+    background-color: white;
+    z-index: 99;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: none;
+}
+
+#button-hide {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: burlywood;
+}
+#button-hide:hover {
+    background-color: antiquewhite;
+}
