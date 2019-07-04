@@ -87,10 +87,11 @@ function BicycleFunction() {
 
 BicycleFunction.prototype.applyBrake = function (brake) {
     this._speed += brake;
-}
+};
+
 BicycleFunction.prototype.speedup = function (up) {
     this._speed += up;
-}
+};
 
 function MountainBikeFunction() {
     BicycleFunction.call(this);
@@ -99,7 +100,7 @@ function MountainBikeFunction() {
 
 MountainBikeFunction.prototype.setGear = function (gear) {
     this._gear = gear;
-}
+};
 
 var bicycle1 = new BicycleFunction();
 var bicycle2 = new BicycleFunction();
