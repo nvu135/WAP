@@ -32,7 +32,13 @@ init = function () {
 
     blank.style.left = '300px';
     blank.style.top = '300px';
-
+    
+    $("#shufflebutton").click(function () {
+        let randomStep = getRndInteger(1, 100);
+        for (let step = 0; step < randomStep; step++) {
+            shuffle();
+        }
+    });
 
     $(divs).click(function (event) {
         loopTiles(function (currentTile, blankTile) {
@@ -42,7 +48,6 @@ init = function () {
 
     $(divs).hover(function (event) {
         loopTiles(function (currentTile, blankTile) {
-            console.log("log");
             hoverTiles(currentTile);
         }, this);
     }, function (event) {
@@ -50,15 +55,31 @@ init = function () {
     });
 
     function loopTiles(action, currentTile) {
-        for (var i = 0; i < divs.length; i++) {
+        const canMoveTiles = findCanMoveTiles(currentTile);
+        canMoveTiles.forEach(function (element, i) {
+            if (element.type == "blank") {
+                action(currentTile, element);
+            }
+        })
+    }
+
+    function shuffle() {
+        const blankTile = document.getElementById("blank");
+        const tiles = findCanMoveTiles(blankTile);
+        const randomWay = getRndInteger(0, tiles.length - 1);
+        changetTiles(blankTile, tiles[randomWay]);
+    }
+
+    function findCanMoveTiles(currentTile) {
+        let tiles = [];
+        for (let i = 0; i < divs.length; i++) {
             const tempX = currentTile.x - divs[i].x;
             const tempY = currentTile.y - divs[i].y;
             if (((tempX == 100 || tempX == -100) && tempY == 0) || ((tempY == 100 || tempY == -100) && tempX == 0)) {
-                if (divs[i].type == "blank") {
-                    action(currentTile, divs[i]);
-                }
+                tiles.push(divs[i]);
             }
         };
+        return tiles;
     }
 
     function hoverTiles(currentTile) {
@@ -66,9 +87,6 @@ init = function () {
     }
 
     function changetTiles(tile1, tile2) {
-        console.log(tile1);
-        console.log(tile2);
-
         let tempTile = {
             x: 0,
             y: 0
@@ -78,7 +96,6 @@ init = function () {
         equal(tile2, tempTile);
         drawTile(tile1);
         drawTile(tile2);
-
     }
 
     function equal(tile1, tile2) {
@@ -90,6 +107,11 @@ init = function () {
         tile.style.left = tile.x + 'px';
         tile.style.top = tile.y + 'px';
     }
+
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
 };
 
 window.onload = init;
