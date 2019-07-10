@@ -34,8 +34,8 @@ init = function () {
     blank.style.top = '300px';
     
     $("#shufflebutton").click(function () {
-        let randomStep = getRndInteger(1, 100);
-        for (let step = 0; step < randomStep; step++) {
+        let rStep = getRndInteger(1, 100);
+        for (let step = 0; step < rStep; step++) {
             shuffle();
         }
     });
@@ -66,8 +66,8 @@ init = function () {
     function shuffle() {
         const blankTile = document.getElementById("blank");
         const tiles = findCanMoveTiles(blankTile);
-        const randomWay = getRndInteger(0, tiles.length - 1);
-        changetTiles(blankTile, tiles[randomWay]);
+        const randomWay = Math.floor(Math.random() * tiles.length) + 1;
+        changetTiles(blankTile, tiles[randomWay - 1]);
     }
 
     function findCanMoveTiles(currentTile) {
