@@ -40,6 +40,15 @@ init = function () {
         }, this);
     });
 
+    $(divs).hover(function (event) {
+        loopTiles(function (currentTile, blankTile) {
+            console.log("log");
+            hoverTiles(currentTile);
+        }, this);
+    }, function (event) {
+        $(this).removeClass("movablepiece");
+    });
+
     function loopTiles(action, currentTile) {
         for (var i = 0; i < divs.length; i++) {
             const tempX = currentTile.x - divs[i].x;
@@ -50,6 +59,10 @@ init = function () {
                 }
             }
         };
+    }
+
+    function hoverTiles(currentTile) {
+        $(currentTile).addClass("movablepiece");
     }
 
     function changetTiles(tile1, tile2) {
