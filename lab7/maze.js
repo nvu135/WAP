@@ -21,7 +21,7 @@ $(document).ready(function () {
 
 
     $("#end").mouseover(function () {
-        if (win) {
+        if (win && start) {
             start = false;
             $("#status").text('You win!');
         }
